@@ -3,12 +3,12 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
-import "./Slider.css";
-import { Parallax, Pagination, Navigation, Autoplay } from "swiper";
+// import "./Slider.css";
+// import { Parallax, Pagination, Navigation, Autoplay } from "swiper";
 
 function Slider  () {
     return (
