@@ -1,0 +1,20 @@
+1 npx create-react-app <app name>
+2. npm i react-router-dom 
+3. for tailwind npm install -D tailwindcss postcss autoprefixer
+                npx tailwindcss init -p
+                in tailwind.config.js==============
+                 content: [
+                     "./src/**/*.{js,jsx,ts,tsx}",
+                 ],
+                in top of index.css==============
+                @tailwind base;
+                @tailwind components;
+                @tailwind utilities;
+4. for install daisyui
+                npm i daisyui
+                in tailwind.config.js
+                module.exports = {
+                   //...
+                 plugins: [require("daisyui")],
+                }
+
