@@ -24,5 +24,7 @@
                 }
 5. for install swiper ============= 
                 npm install swiper
-6. 
+6. for install date picker 
+               npm install react-day-picker date-fns
 
+7. 

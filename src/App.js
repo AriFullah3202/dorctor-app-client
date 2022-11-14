@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { RouterProvider } from 'react-router';
 import { router } from './Routes/Routes/Routes';
+import 'react-day-picker/dist/style.css';
+
 
 
 
