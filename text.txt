@@ -26,5 +26,7 @@
                 npm install swiper
 6. for install date picker 
                npm install react-day-picker date-fns
+               go to search ===https://react-day-picker.js.org/
+               
 
 7. 
