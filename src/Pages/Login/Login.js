@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react'
 import { useForm, } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import { toast } from 'react-toastify';
+
 
 
 
@@ -21,6 +23,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                toast.success(`User add successfuly`, { autoClose: 2000 })
+
                 navigate(from, { replace: true });
             })
             .catch(error => {

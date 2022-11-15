@@ -45,3 +45,15 @@
          then create file AuthProvider.js
          then above the file create a context
          then 
+10. install toastify 
+        first 
+         npm install --save react-toastify
+         then in App.js use 
+               <ToastContainer position='top-center' />
+         and import it
+         then 
+         toast.success(`User add successfuly`, { autoClose: 2000 })
+         then import it 
+         import { toast } from 'react-toastify';
+
+        or use this line whenever if you need the toast in the component
