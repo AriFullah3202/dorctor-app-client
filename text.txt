@@ -32,4 +32,11 @@
 7. install react form 
             npm install react-hook-form
             https://react-hook-form.com/get-started
-            
+8. for Use firebase go to sie 
+          https://console.firebase.google.com/u/0/project/
+          create a new project
+          the create web app </> click this icon
+          
+          then npm install firebase
+
+          then create a Folder in src folder name it firebase . inside firebase folder create a file firebase.config.js in your project 
