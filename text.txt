@@ -29,4 +29,7 @@
                go to search ===https://react-day-picker.js.org/
                
 
-7. 
+7. install react form 
+            npm install react-hook-form
+            https://react-hook-form.com/get-started
+            
