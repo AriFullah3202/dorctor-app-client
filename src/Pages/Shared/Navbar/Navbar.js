@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider';
 
-
-const menuitems = <>
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/appintment">Appintment</Link></li>
-    <li><Link to="/aboout">About</Link></li>
-    <li><Link to="/login">Login</Link></li>
-
-</>
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext);
+    const menuitems = <>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/appintment">Appintment</Link></li>
+        <li><Link to="/aboout">About</Link></li>
+        {user ?.uid ?
+            <li><Link to="/login">Sign out</Link></li>
+            : <li><Link to="/login">Login</Link></li>}
+    </>
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
