@@ -36,7 +36,12 @@
           https://console.firebase.google.com/u/0/project/
           create a new project
           the create web app </> click this icon
-          
+
           then npm install firebase
 
           then create a Folder in src folder name it firebase . inside firebase folder create a file firebase.config.js in your project 
+9. after complete sign up and log in use Auth context 
+         create context folder inside src folder 
+         then create file AuthProvider.js
+         then above the file create a context
+         then 
