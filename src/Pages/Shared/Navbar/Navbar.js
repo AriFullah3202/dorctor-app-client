@@ -4,13 +4,23 @@ import { AuthContext } from '../../../context/AuthProvider';
 
 
 const Navbar = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.log(err));
+    }
     const menuitems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/appintment">Appintment</Link></li>
-        <li><Link to="/aboout">About</Link></li>
+        <li><Link to="/about">About</Link></li>
         {user ?.uid ?
-            <li><Link to="/login">Sign out</Link></li>
+            <>
+                <li><Link to="/dashboard">Dashboard</Link></li>
+                <li><button onClick={handleLogOut}>Sign out</button></li>
+            </>
+
             : <li><Link to="/login">Login</Link></li>}
     </>
     return (
