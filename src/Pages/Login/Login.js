@@ -25,7 +25,12 @@ const Login = () => {
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text">Password</span>
                         </label>
-                        <input className="input input-bordered w-full max-w-xs" type="password" {...register("password", { required: "password is requied", minLength: { value: 6, message: 'password at least 6 charactars or longer' } })} />
+                        <input className="input input-bordered w-full max-w-xs" type="password" {...register("password", {
+                            required: "password is requied", required: "Password is required",
+
+                            minLength: { value: 6, message: "Password must be 6 characters long" },
+                            pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/, message: 'Password must be strong' }
+                        })} />
                         {errors.password && <p className="text-red-400">{errors.password ?.message}</p>}
                         <label className="label"><span className="label-text">Forget Password ?</span>
                         </label>
