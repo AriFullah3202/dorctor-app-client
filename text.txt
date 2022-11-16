@@ -72,4 +72,34 @@
         2. then Click Database
         3. then  Connect then click connect your application
         3 
+12. the topic intersting React Query
+    few years ago the topic was React Query Now topic is TanStack Query
+        1. https://tanstack.com/query/v4/docs/overview
+        2. Instal the query 
+           npm i @tanstack/react-query
+        3. use of React Query
+            1. React Query is actually for data Fatching  fetching, caching, synchronizing and updating server state 
+            2. to use in INDEX.JS first only use index.js import 
+                          import {
+              useQuery,
+              useMutation,
+              useQueryClient,
+              QueryClient,
+              QueryClientProvider,
+            } from '@tanstack/react-query'
+         3. in index.js  
+                      <QueryClientProvider client={QueryClient}>
+              <AuthProvider>
+                <App />
+              </AuthProvider>
+            </QueryClientProvider>
+         4. then je component e amra Query use korbo
+            se component 
+            const {} = useQuery({  //useQuery 2ta parameter nibe 
+              queryKey : [''] ei parameter e search query or parameter thake thahole dibo comma use kore
+              querFn : () => {
+                eti function ne
+              }
+            })
+
 
