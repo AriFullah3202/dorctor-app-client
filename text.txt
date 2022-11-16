@@ -57,3 +57,19 @@
          import { toast } from 'react-toastify';
 
         or use this line whenever if you need the toast in the component
+
+
+10. how to insert a c group of data manually in mongodb
+        1. https://cloud.mongodb.com/v2/635e4b8089935215210d7d89#clusters
+        2. go to Database then Browse Collection
+        3. then click create Database
+        4. to go insert a group of json data 1. remove _id
+        5. then Click Insert Document option in mongodb
+        6. then in popup remove  the _id
+        7. then click {} paste the json and click insert button
+11. how to connect online mongodb
+        1. click https://cloud.mongodb.com/v2/635e4b8089935215210d7d89#clusters
+        2. then Click Database
+        3. then  Connect then click connect your application
+        3 
+
