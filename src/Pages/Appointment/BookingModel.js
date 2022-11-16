@@ -42,10 +42,14 @@ const BookingModel = ({ treatment, setTreatment, selectedDate, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-
+                    // setTreatment mane model k off kore dicchi
                     setTreatment(null)
                     toast.success("booking confirmed")
                     refetch()
+                }
+                else {
+                    setTreatment(null)
+                    toast.error(data.message)
                 }
             })
             .catch(err => console.log(err))

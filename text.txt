@@ -102,4 +102,7 @@
               }
             })
 
+13. React Query er magic holo 
+       same computer e 2ta browser e 2ta account khula thakle 1ta change korle r ekta te change hoye jay 
+
 
