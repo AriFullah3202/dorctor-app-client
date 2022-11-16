@@ -3,21 +3,25 @@ import { format } from 'date-fns/esm';
 import AppointmentOption from './AppointmentOption';
 import BookingModel from './BookingModel';
 import { useQuery } from '@tanstack/react-query';
+import Loading from '../Shared/Loading';
 
 const AvailableAppointment = ({ selectedDate }) => {
     const [treatment, setTreatment] = useState(null);
+    const date = format(selectedDate, 'PP')
 
+    const { data: appointmentOptions = [], refetch ,isLoading } = useQuery({  //useQuery 2ta parameter nibe 
 
-    const { data: appointmentOptions = [] } = useQuery({  //useQuery 2ta parameter nibe 
-
-        queryKey: ['appointmentOptions'],
+        queryKey: ['appointmentOptions', date],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/appointmentOptions`)
+            const res = await fetch(`http://localhost:5000/appointmentOptions?date=${date}`)
             const data = await res.json();
             console.log(data)
             return data;
         }
     })
+    if(isLoading) {
+        return <Loading></Loading>
+    }
 
     // useEffect(() => {
     //     fetch(`http://localhost:5000/appointmentOptions`)
@@ -46,6 +50,7 @@ const AvailableAppointment = ({ selectedDate }) => {
                     treatment={treatment}
                     selectedDate={selectedDate}
                     setTreatment={setTreatment}
+                    refetch = {refetch}
                 ></BookingModel>
             }
 
