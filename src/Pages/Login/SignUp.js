@@ -21,7 +21,8 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        navigate('/')
+
+                        saveUser(data.name, data.email)
                     })
                     .catch(err => console.log(err));
             })
@@ -32,6 +33,24 @@ const SignUp = () => {
 
             });
 
+
+    }
+    const saveUser = (name, email) => {
+        const user = { name, email };
+        fetch('http://localhost:5000/user', {
+            method: 'POST',
+            headers: {
+                'content-type': 'Application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                navigate('/')
+
+            })
+            .catch(err => console.log(err))
     }
     return (
         <div className="h-[800px] flex justify-center items-center">
