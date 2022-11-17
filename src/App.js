@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="max-w-[1200px] mx-auto">
       <RouterProvider router={router}></RouterProvider>
-      <ToastContainer position='top-center' />
+      <ToastContainer position='top-center'></ToastContainer>
     </div>
   );
 }

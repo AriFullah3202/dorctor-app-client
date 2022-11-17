@@ -5,8 +5,9 @@ import Home from "../../Pages/Home/Home";
 import Appointment from "../../Pages/Appointment/Appointment";
 import SignUp from "../../Pages/Login/SignUp";
 import PrivateRoute from "./PrivateRoute";
-import Deshboard from "../../Pages/Deshboard/Deshboard/Deshboard";
 import About from "../../Pages/About/About";
+import DashboardLayout from "../../Layout/DashboardLayout";
+import Deshboard from "../../Pages/Deshboard/Deshboard/Deshboard";
 
 export const router = createBrowserRouter([
     {
@@ -29,15 +30,22 @@ export const router = createBrowserRouter([
                 path: "/signUp",
                 element: <SignUp></SignUp>
             },
-            {
-                path: '/dashboard',
-                element: <PrivateRoute><Deshboard></Deshboard></PrivateRoute>
-            }
             ,
             {
                 path: "/about",
                 element: <About></About>
             }
         ]
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <Deshboard></Deshboard>
+            }
+        ]
+
     }
 ])
