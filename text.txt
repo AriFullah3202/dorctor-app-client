@@ -108,4 +108,8 @@
 14. we added sidebar and navbar simultaniously
     sidebar and navbar from daisyui
     go to daisyui search drawer then copy the code from Drawer for mobile + fixed sidebar for desktop
-    
+
+15. show table deshboard 
+      go to daisyUi table 
+       then copy  Table with a row that highlights on hover this code 
+           
