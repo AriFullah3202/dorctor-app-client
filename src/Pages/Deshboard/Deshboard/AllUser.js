@@ -2,7 +2,7 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query';
 
 const AllUser = () => {
-    const { data: users = [''] } = useQuery({
+    const { data: users = [''], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/users')
@@ -10,6 +10,18 @@ const AllUser = () => {
             return data;
         }
     })
+    const handleMakeAdmin = id => {
+        fetch(`http://localhost:5000/users/admin/${id}`, {
+
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    refetch()
+                }
+            })
+    }
     return (
         <div>
             <h1>this is all user</h1>
@@ -19,9 +31,9 @@ const AllUser = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th>Favorite Color</th>
+                            <th>Email</th>
+                            <th>Admin</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,8 +42,8 @@ const AllUser = () => {
                                 <th>{index + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>Blue</td>
-                                <td>Purple</td>
+                                <td>{user ?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
+                                <td><button className='btn btn-danger'>Delete</button></td>
                             </tr>)
                         }
                     </tbody>
