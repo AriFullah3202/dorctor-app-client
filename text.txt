@@ -112,5 +112,10 @@
 15. show table deshboard 
       go to daisyUi table 
        then copy  Table with a row that highlights on hover this code
-16. for create jwt in signIN , signUp , and socail Login use Custom hook 
+16. for create jwt in signIN , signUp , and socail Login use Custom hook
+
+17. ekhane useAdmin database theke kono user admin kina check kore true false return kora
+    AdminRoutes Alluser component k  protect korche . ei khan thke useAdmin hook e email jacche return korche boolean 
+    and 
+    DeshBoard Layout e oi admin hole dekhabe admin na hole dekhabe nas
            
