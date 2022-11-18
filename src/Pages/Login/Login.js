@@ -3,6 +3,7 @@ import { useForm, } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-toastify';
+import useToken from '../../hooks/useToken';
 
 
 
@@ -12,8 +13,15 @@ const Login = () => {
     const [loginError, setLoginError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
+    const [token] = useToken(createdUserEmail)
 
     const from = location.state ?.from ?.pathname || '/';
+
+    if (token) {
+        navigate(from, { replace: true });
+    }
+
     const { register, formState: { errors }, handleSubmit } = useForm();
     const handleLogin = (data) => {
         console.log(data)
@@ -24,14 +32,23 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success(`User add successfuly`, { autoClose: 2000 })
-
-                navigate(from, { replace: true });
+                setCreatedUserEmail(data.email)
             })
             .catch(error => {
                 console.log(error.message)
                 setLoginError(error.message);
             });
     }
+    // const getUserToken = email => {
+    //     fetch(`http://localhost:5000/jwt?email=${email}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if (data.accessToken) {
+    //                 localStorage.setItem('accessToken', data.accessToken)
+    //                 navigate('/')
+    //             }
+    //         })
+    // }
     return (
         <div className="h-[800px] flex justify-center items-center">
             <div className="w-96 p-7 border-2 border-indigo-600"    >

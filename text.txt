@@ -111,5 +111,6 @@
 
 15. show table deshboard 
       go to daisyUi table 
-       then copy  Table with a row that highlights on hover this code 
+       then copy  Table with a row that highlights on hover this code
+16. for create jwt in signIN , signUp , and socail Login use Custom hook 
            
