@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useQuery } from '@tanstack/react-query';
+import ConfirmationModal from '../../Shared/confiremationModal/ConfirmationModal';
 
 const ManageDoctors = () => {
-    const { data: doctors = [''], isloading } = useQuery({
+    const [deletingDoctor, setDeletingDoctor] = useState(null)
+    const closeModal = () => {
+        setDeletingDoctor(null)
+    }
+
+
+    const { data: doctors = [''], isloading, refetch } = useQuery({
         queryKey: ['doctors'],
         queryFn: async () => {
             try {
@@ -18,12 +25,9 @@ const ManageDoctors = () => {
                 console.log(error)
             }
         }
-    })
-    if (isloading) {
-        return <progress className="progress w-56"></progress>
-    }
-    const handleDeleteDoctor = id => {
-        fetch(`http://localhost:5000/doctors/${id}`, {
+    });
+    const handleDeleteDoctor = doctor => {
+        fetch(`http://localhost:5000/doctors/${doctor._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +36,11 @@ const ManageDoctors = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                refetch()
             })
+    }
+    if (isloading) {
+        return <progress className="progress w-56"></progress>
     }
     return (
         <div>
@@ -54,22 +62,32 @@ const ManageDoctors = () => {
                         {
                             doctors.map((doctor, index) => <tr key={doctor._id} className="hover">
                                 <th>{index + 1}</th>
-                                <th>
+                                <td>
                                     <div className="avatar">
                                         <div className="w-24 rounded-full">
                                             <img src={doctor.image} />
                                         </div>
                                     </div>
-                                </th>
+                                </td>
                                 <td>{doctor.name}</td>
                                 <td>{doctor.email}</td>
-                                <th>{doctor.speciality}</th>
-                                <td><button onClick={() => { handleDeleteDoctor(doctor._id) }} className='btn btn-danger'>Delete</button></td>
+                                <td>{doctor.speciality}</td>
+                                <td><label onClick={() => setDeletingDoctor(doctor)} htmlFor="confirmation-modal" className="btn btn-danger">Delete</label></td>
                             </tr>)
                         }
                     </tbody>
                 </table>
             </div>
+            {
+                deletingDoctor && <ConfirmationModal
+                    title={`Are you sure you want to delete`}
+                    message={`If you delete ${deletingDoctor.name} . Can not be undone`}
+                    closeModal={closeModal}
+                    onSuccess={handleDeleteDoctor}
+                    modalData={deletingDoctor}
+                >
+                </ConfirmationModal>
+            }
         </div>
     )
 }

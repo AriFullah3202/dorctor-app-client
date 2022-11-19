@@ -23,7 +23,7 @@ const AddDoctor = () => {
         const image = (data.img[0])
         const formData = new FormData();
         formData.append('image', image)
-        const uri = `https://api.imgbb.com/1/upload?expiration=600&key=${process.env.REACT_APP_imgbb_key}`
+        const uri = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_imgbb_key}`
         fetch(uri, {
             method: 'POST',
             body: formData
@@ -57,6 +57,7 @@ const AddDoctor = () => {
 
                 }
             })
+            .catch(err => { console.log(err) })
     }
     if (isloading) {
         return <progress className="progress w-56"></progress>

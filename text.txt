@@ -131,6 +131,11 @@
      6. oi key ta .env.local file e REACT_APP_imgbb_key = name e save korte hbe
      7. https://api.imgbb.com/1/upload ei url e image patate hbe
      8. 
-
+19. ekta component theke r ekta component er modal open 
+     model ki open korbo naki korbo na eijonno state lagbe
+     1. first je component e click kora hbe oikhane state declare korte hbe
+     2. then r ekta component e thakbe sudhu modal 
+     3. then jkhon click kora hbe thokon state e rakha hbe
+     4.
     
            
