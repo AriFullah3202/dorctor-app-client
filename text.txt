@@ -118,4 +118,19 @@
     AdminRoutes Alluser component k  protect korche . ei khan thke useAdmin hook e email jacche return korche boolean 
     and 
     DeshBoard Layout e oi admin hole dekhabe admin na hole dekhabe nas
+
+18. Add a Doctor react form use kore form create korlam and image hosing imgbb
+     then Three places to store images
+       1. image hosting server
+       2. File system of your server
+       3. mongodb(database)
+    then imgbb te host korlam 
+     1. imgbb.com 2. then sign in 3. About option
+     4. then api option
+     5. copy the api 
+     6. oi key ta .env.local file e REACT_APP_imgbb_key = name e save korte hbe
+     7. https://api.imgbb.com/1/upload ei url e image patate hbe
+     8. 
+
+    
            
