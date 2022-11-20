@@ -23,6 +23,7 @@ const BookingModel = ({ treatment, setTreatment, selectedDate, refetch }) => {
             appointmentDate: date,
             treatment: treatment.name,
             patient: name,
+            price: treatment.price,
             slot,
             email,
             phone,

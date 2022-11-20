@@ -7,17 +7,19 @@ import SignUp from "../../Pages/Login/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
-import Deshboard from "../../Pages/Deshboard/Deshboard/Deshboard";
 import MyAppointment from "../../Pages/Deshboard/MyAppointment/MyAppointment";
 import AllUser from "../../Pages/Deshboard/Deshboard/AllUser";
 import AdminRoute from "./AdminRoute";
 import AddDoctor from "../../Pages/Deshboard/AddDoctor/AddDoctor";
 import ManageDoctors from "../../Pages/Deshboard/ManageDoctors/ManageDoctors";
+import Payment from "../../Pages/Deshboard/Payment/Payment";
+import DisplayError from "../../Pages/Shared/DisplayjError/DisplayError";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: "/",
@@ -35,7 +37,7 @@ export const router = createBrowserRouter([
                 path: "/signUp",
                 element: <SignUp></SignUp>
             },
-            ,
+
             {
                 path: "/about",
                 element: <About></About>
@@ -45,6 +47,7 @@ export const router = createBrowserRouter([
     {
         path: '/dashboard',
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/dashboard',
@@ -61,7 +64,13 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/managedoctors',
                 element: <AdminRoute><ManageDoctors></ManageDoctors></AdminRoute>
-
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <AdminRoute><Payment></Payment></AdminRoute>,
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/booking/${params.id}`);
+                }
             }
         ]
 

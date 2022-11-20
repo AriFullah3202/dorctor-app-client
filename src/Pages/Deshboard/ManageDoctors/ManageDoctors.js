@@ -26,8 +26,11 @@ const ManageDoctors = () => {
             }
         }
     });
+
     const handleDeleteDoctor = doctor => {
-        fetch(`http://localhost:5000/doctors/${doctor._id}`, {
+        const uri = `http://localhost:5000/doctors/${doctor._id}`
+        console.log(uri)
+        fetch(uri, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

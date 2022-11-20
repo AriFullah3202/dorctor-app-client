@@ -137,5 +137,11 @@
      2. then r ekta component e thakbe sudhu modal 
      3. then jkhon click kora hbe thokon state e rakha hbe
      4.
+20. jodi amra protected route data undifine pay
+     1. thole chorme e network tab jete hbe
+     2. jodi onek gula dekha jay thahole filter korte hbe
+     3. filter korar por 
+     4. oita te click korle Header , preview , dekha jabe
+     
     
            
