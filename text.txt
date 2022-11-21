@@ -183,5 +183,11 @@
                 },
             },
         );
-    
+23. React hook use kora holo 
+    Navigation() ei hook ti 
+     const navigation = useNavigation();
+     navigation er moddhe state pacchi
+    if (navigation.state === 'loading') {
+        <Loading></Loading>
+    }
            
