@@ -155,5 +155,33 @@
     8. ora visa card diye dice
     9. go to documentation .. https://stripe.com/docs/testing
     10. go to card copy the card number try the test visa card
+
+             //follow this
+    11. first install npm install --save @stripe/react-stripe-js @stripe/stripe-js
+    12. card loadStripe https://github.com/stripe/react-stripe-js/blob/master/examples/hooks/0-Card-Minimal.js
+    // loadStripe er moddhe pk dite hbe
+    //documentation follow https://stripe.com/docs/stripe-js/
+     
+    13. card element  
+    14. card form
+    15. stripe , elements
+    16. check card error and display error
+22. for confirm Card Payment go to visit 
+      https://stripe.com/docs/js/payment_intents/confirm_card_payment
+
+       ei method ta 2t parameter nibe ekta holo
+       client secret ja server side theke pawa gech
+       const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
+            clientSecret,
+            {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        name: patient,
+                        email: email
+                    },
+                },
+            },
+        );
     
            
