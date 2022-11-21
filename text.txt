@@ -142,6 +142,18 @@
      2. jodi onek gula dekha jay thahole filter korte hbe
      3. filter korar por 
      4. oita te click korle Header , preview , dekha jabe
-     
+
+
+21. to use stripe payment gateway
+    1. first sign up stripe website 
+    2. search stripe js react
+    3. then search stripe js react :github
+    4. create Payment folder
+    5. then create CheckoutForm js and Payment.js file
+    6. i have followed the link https://github.com/stripe/react-stripe-js/blob/master/examples/hooks/0-Card-Minimal.js
+    7. Note : Stripe devloper er jonno onek friendly
+    8. ora visa card diye dice
+    9. go to documentation .. https://stripe.com/docs/testing
+    10. go to card copy the card number try the test visa card
     
            
