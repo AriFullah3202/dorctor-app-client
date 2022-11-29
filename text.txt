@@ -190,4 +190,25 @@
     if (navigation.state === 'loading') {
         <Loading></Loading>
     }
+24. How to deploy client cide application to firebase
+    1. first select http://localhost:3000/
+    2. then control + shift + f click kore server er link replace korte hbe
+    3. then firebase init korte hbe
+    4.  y 
+    5. then Configure file for firebase hosting
+    6. then Use an existing project
+    7. then select your app
+    8. build  ==== likhe dite hbe
+    9. y 
+    10. No
+    11. npm run build
+    12. firebase deploy
+    13. see the website
+    14 . do you want to update 
+         1. npm run build
+         2. firebase deploy
+
+{"question":"How does prototypical inheritance work?","answer":"SQL is the programming language used to interface with relational databases. (Relational databases model data as records in rows and tables with logical links between them). NoSQL is a class of DBMs that are non-relational and generally do not use SQL.","img":"https://lh3.googleusercontent.com/a/ALm5wu0gKSbj-vrE-htx83t_56TBALi1t7_JwwWnxFh1gA=s96-c","name":"Arif"}
+
+
            

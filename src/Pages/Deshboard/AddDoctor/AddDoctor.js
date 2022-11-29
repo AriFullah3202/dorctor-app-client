@@ -13,7 +13,7 @@ const AddDoctor = () => {
     const { data: Specialies = [''], isloading } = useQuery({
         queryKey: ['appointmentSpeciality'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/appointmentSpeciality')
+            const res = await fetch('https://doctor-portal-arif.vercel.app/appointmentSpeciality')
             const data = await res.json()
             return data
         }
@@ -39,7 +39,7 @@ const AddDoctor = () => {
                         image: imgData.data.url
                     }
                     //save doctor info to database
-                    fetch(`http://localhost:5000/doctors`, {
+                    fetch(`https://doctor-portal-arif.vercel.app/doctors`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

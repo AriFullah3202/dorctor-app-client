@@ -67,9 +67,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/payment/:id',
-                element: <AdminRoute><Payment></Payment></AdminRoute>,
+                element: <Payment></Payment>,
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/booking/${params.id}`);
+                    return fetch(`https://doctor-portal-arif.vercel.app/booking/${params.id}`);
                 }
             }
         ]

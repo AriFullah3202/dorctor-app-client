@@ -43,7 +43,7 @@ const SignUp = () => {
     }
     const saveUser = (name, email) => {
         const user = { name, email };
-        fetch('http://localhost:5000/user', {
+        fetch('https://doctor-portal-arif.vercel.app/user', {
             method: 'POST',
             headers: {
                 'content-type': 'Application/json'
@@ -58,7 +58,7 @@ const SignUp = () => {
             .catch(err => console.log(err))
     }
     // const getUserToken = email => {
-    //     fetch(`http://localhost:5000/jwt?email=${email}`)
+    //     fetch(`https://doctor-portal-arif.vercel.app/jwt?email=${email}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             if (data.accessToken) {
